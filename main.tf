@@ -10,10 +10,10 @@ resource "aws_lb" "main" {
 
 
 resource "aws_security_group" "main" {
-  name        = local.sg_name
-  description = local.sg_name
+  name        = "${var.env}-alb-sg"
+  description = "${var.env}-alb-sg"
   vpc_id      = var.vpc_id
-  tags        = merge(local.tags, { Name = local.sg_name })
+  tags        = merge(local.tags, { Name = "${var.env}-alb-sg" })
 
   ingress {
     description = "APP"
