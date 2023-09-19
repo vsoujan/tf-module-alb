@@ -1,3 +1,3 @@
-output "alb_name" {
+output "alb" {
   value = aws_lb.main
 }
